@@ -8,3 +8,4 @@ ES6基础复习
 [Generator基础语法](https://github.com/WhatProblem/ES6/blob/master/generator/1.js)<br/>
 [Generator异步应用](https://github.com/WhatProblem/ES6/blob/master/generator/2.js)<br/>
 [对象的扩展](https://github.com/WhatProblem/ES6/blob/master/object/1.js)<br/>
+[Promise](https://github.com/WhatProblem/ES6/blob/master/promise/1.js)<br/>
