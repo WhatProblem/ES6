@@ -1,0 +1,18 @@
+button {
+    font-size: 14px;
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background: rgb(6, 151, 235);
+    border-radius: 5px;
+    color: #f9f9f9;
+    transition: all 0.23s;
+}
+button:hover {
+    cursor: pointer;
+    color: rgb(240, 222, 222);
+    background: rgb(32, 149, 245);
+}
