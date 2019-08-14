@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:1": "webpack --config webpack.config.my.js",
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "build:1": "webpack --config webpack.config.js",
+    "dev:1": "webpack-dev-server --config webpack.config.js",
+    "build:2": "webpack --config webpack.config.my1.js",
+    "dev:2": "webpack-dev-server --config webpack.config.my1.js",
+    "build": "npm run build:1",
+    "dev": "npm run dev:1"
   },
   "repository": {
     "type": "git",
@@ -29,10 +32,13 @@
     "@babel/runtime": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "eslint-loader": "^2.2.1",
     "expose-loader": "^0.7.5",
+    "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "html-withimg-loader": "^0.1.16",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.8.0",
@@ -40,6 +46,7 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^2.1.0",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"

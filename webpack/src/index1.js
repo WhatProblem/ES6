@@ -1,0 +1,1 @@
+console.log('这是多页应用中的index1.js')

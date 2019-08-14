@@ -3,3 +3,8 @@ body {
     background: red;
     transform: rotate(45deg);
 }
+div {
+    width: 100%;
+    height: 200px;
+    background: url('./logo.png') no-repeat;
+}
