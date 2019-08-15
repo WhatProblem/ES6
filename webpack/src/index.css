@@ -1,7 +1,7 @@
 @import './a.css';
 body {
     background: red;
-    transform: rotate(45deg);
+    /* transform: rotate(45deg); */
 }
 div {
     width: 100%;
