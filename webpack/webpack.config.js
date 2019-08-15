@@ -8,9 +8,15 @@ const OptMizeCss = require('optimize-css-assets-webpack-plugin') // 压缩css
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 压缩js,不使用的话导致js不压缩
 const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 清除打包文件夹插件
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
+
+// 1.CleanWebpackPlugin: 清空之前的打包build文件夹
+// 2.CopyWebpackPlugin: 
+// 3.BannerPlugin: 内置插件，添加版权信息
 module.exports = {
-    mode: 'production', // 模式
+    // mode: 'production', // 模式
+
     // optimization: { // 压缩优化，自动压缩css，UglifyJsPlugin必须设置，否者js不压缩
     //     minimizer: [
     //         new OptMizeCss(),
@@ -21,12 +27,33 @@ module.exports = {
     //         })
     //     ]
     // },
-    devServer: { // 开发服务器配置
-        port: 3000, // 更改端口号
-        progress: true, // 显示进度
-        contentBase: './build', // 运行指定文件夹（内存）
-        open: false, // 自动打开浏览器
-    },
+
+    // devServer: { // 开发服务器配置
+    //     port: 3000, // 更改端口号
+    //     progress: true, // 显示进度
+    //     contentBase: './build', // 运行指定文件夹（内存）
+    //     open: false, // 自动打开浏览器
+        
+    //     // 1.使用webpack代理方式
+    //     // proxy: { // 重写方式，把请求代理到express服务器
+    //     //     '/proxy': {
+    //     //         target: 'http://localhost:4000',
+    //     //         pathRewrite: { '/proxy': '' }
+    //     //     }
+    //     // },
+
+    //     // 2.使用webpack提供的before钩子模拟假数据
+    //     // before(app) {
+    //     //     app.get('/proxy/user', (req, res) => {
+    //     //         res.json({ data: '通过webpack钩子模拟假数据成功' })
+    //     //     })
+    //     // },
+
+    //     // 3.使用webpack和webpack提供的webpack-dev-middleware中间件创建一个服务，将前端嵌套在服务端中运行
+    //     // 即：通过服务端创建一个3000端口，然后同时也供前端使用，同域中运行，不会跨域
+    //     // 使用第三种方法的时候需要注释当前devServer
+    // },
+
     // mode: 'development', // 模式 默认production 另一种development
     entry: './src/index.js', // 打包入口文件
     output: {
@@ -63,7 +90,8 @@ module.exports = {
         // new webpack.ProvidePlugin({ // 在每个模块中注入"$"符号
         //     $: 'jquery'
         // })
-
+        new webpack.BannerPlugin('通过 BannerPlugin 插件添加版权声明'),
+        new CopyWebpackPlugin([{ from: 'doc', to: './webapck' }]), // 打包时拷贝文件到指定文件夹
         new CleanWebpackPlugin(), // 打包前先清除之前的文件
     ],
     externals: { // 对于外部引入过的类库不再打包，例如：<srcipt src="./jquery.js">

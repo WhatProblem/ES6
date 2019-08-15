@@ -1,5 +1,6 @@
 import './index.css'
 import './index.less'
+import './xhr'
 import './a.js'
 import '@babel/polyfill' // 转换es6,es7 =>e s5
 // import $ from 'expose-loader?$!jquery'
