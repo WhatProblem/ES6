@@ -11,8 +11,10 @@
     "dev:2": "webpack-dev-server --config webpack.config.my1.js",
     "dev:3": "webpack-dev-server --config webpack.dev.js",
     "build:3": "webpack --config webpack.prod.js",
-    "build": "npm run build:3",
-    "dev": "npm run dev:3"
+    "dev:4": "webpack-dev-server --config webpack.config.my2.js",
+    "build:4": "webpack --config webpack.config.my2.js",
+    "build": "npm run build:4",
+    "dev": "npm run dev:4"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
     "autoprefixer": "^9.6.1",
     "babel-loader": "^8.0.6",
@@ -40,6 +43,7 @@
     "eslint-loader": "^2.2.1",
     "expose-loader": "^0.7.5",
     "file-loader": "^4.2.0",
+    "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "html-withimg-loader": "^0.1.16",
     "less": "^3.9.0",
@@ -66,6 +70,9 @@
   ],
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   }
 }

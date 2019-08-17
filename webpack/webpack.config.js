@@ -99,6 +99,7 @@ module.exports = {
         jquery: 'jQuery'
     },
     module: { // 模块
+        // noParse: /jquery/, // 不去解析jquery中的依赖库，因为我们已知jquery是独立的库，不会依赖其他项目，减少解析jquery时间
         rules: [ // 处理loadder，执行顺序从右向左,从下向上执行，可以是数组或对象写法
             {
                 test: /\.html$/,
