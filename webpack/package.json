@@ -9,8 +9,10 @@
     "dev:1": "webpack-dev-server --config webpack.config.js",
     "build:2": "webpack --config webpack.config.my1.js",
     "dev:2": "webpack-dev-server --config webpack.config.my1.js",
-    "build": "npm run build:1",
-    "dev": "npm run dev:1"
+    "dev:3": "webpack-dev-server --config webpack.dev.js",
+    "build:3": "webpack --config webpack.prod.js",
+    "build": "npm run build:3",
+    "dev": "npm run dev:3"
   },
   "repository": {
     "type": "git",
@@ -51,7 +53,8 @@
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-merge": "^4.2.1"
   },
   "browserslist": [
     "defaults",
@@ -62,6 +65,7 @@
     "last 3 iOS versions"
   ],
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "jquery": "^3.4.1"
   }
 }

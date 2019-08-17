@@ -61,7 +61,7 @@ module.exports = {
         path: path.resolve(__dirname, 'build'), // 路径必须是一个绝对路径， 打包后的路径
         // publicPath: 'http:www.whatproblem.top', // 添加（图片，js,css等静态资源）公共路径
     },
-    devtool: 'source-map', // 源码映射，快速定位源码日期错误位置
+    // devtool: 'source-map', // 源码映射，快速定位源码日期错误位置
     // source-map：产生source-map文件报错当前行和列
     // eval-source-map：不会产生单独文件，但是可以显示行和列
     // cheap-module-source-map: 不会产生列，但是是一个单独文件，产生后可以保留，进行生产调试使用
@@ -91,8 +91,8 @@ module.exports = {
         //     $: 'jquery'
         // })
         new webpack.BannerPlugin('通过 BannerPlugin 插件添加版权声明'),
-        new CopyWebpackPlugin([{ from: 'doc', to: './webapck' }]), // 打包时拷贝文件到指定文件夹
-        new webpack.DefinePlugin({DEV: JSON.stringify('dev')}), // 暴露webpack执行时的运行环境，dev/prod，方便配置api的url
+        // new CopyWebpackPlugin([{ from: 'doc', to: './webapck' }]), // 打包时拷贝文件到指定文件夹
+        // new webpack.DefinePlugin({DEV: JSON.stringify('dev')}), // 暴露webpack执行时的运行环境，dev/prod，方便配置api的url
         new CleanWebpackPlugin(), // 打包前先清除之前的文件
     ],
     externals: { // 对于外部引入过的类库不再打包，例如：<srcipt src="./jquery.js">
