@@ -33,6 +33,7 @@ module.exports = {
     //     progress: true, // 显示进度
     //     contentBase: './build', // 运行指定文件夹（内存）
     //     open: false, // 自动打开浏览器
+    //     hot: true, // 开启热更新
         
     //     // 1.使用webpack代理方式
     //     // proxy: { // 重写方式，把请求代理到express服务器
@@ -93,6 +94,8 @@ module.exports = {
         new webpack.BannerPlugin('通过 BannerPlugin 插件添加版权声明'),
         new CopyWebpackPlugin([{ from: 'doc', to: './webapck' }]), // 打包时拷贝文件到指定文件夹
         new webpack.DefinePlugin({DEV: JSON.stringify('dev')}), // 暴露webpack执行时的运行环境，dev/prod，方便配置api的url
+        new webpack.NamedChunksPlugin(), // 打印热更新的模块路径
+        new webpack.HotModuleReplacementPlugin(), // 热更新插件
         new CleanWebpackPlugin(), // 打包前先清除之前的文件
     ],
     externals: { // 对于外部引入过的类库不再打包，例如：<srcipt src="./jquery.js">
@@ -140,6 +143,7 @@ module.exports = {
                                 ["@babel/plugin-proposal-decorators", { "legacy": true }], // ES7装饰器转换为ES5，有顺序限制，上
                                 ["@babel/plugin-proposal-class-properties", { "loose": true }], // ES7装饰器转换为ES5，有顺序限制，下
                                 ["@babel/plugin-transform-runtime"], // 转换es7为es5，例如function * gen()
+                                ['@babel/plugin-syntax-dynamic-import'], // 实现懒加载配置插件（动态import()导入语法）
                             ]
                         }
                     }

@@ -13,8 +13,12 @@
     "build:3": "webpack --config webpack.prod.js",
     "dev:4": "webpack-dev-server --config webpack.config.my2.js",
     "build:4": "webpack --config webpack.config.my2.js",
-    "build": "npm run build:4",
-    "dev": "npm run dev:4"
+    "dev:5": "webpack-dev-server --config webpack.config.my3.js",
+    "build:5": "webpack --config webpack.config.my3.js",
+    "dev:6": "webpack-dev-server --config webpack.config.my4.js",
+    "build:6": "webpack --config webpack.config.my4.js",
+    "build": "npm run build:6",
+    "dev": "npm run dev:6"
   },
   "repository": {
     "type": "git",
@@ -30,6 +34,7 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.5.5",
