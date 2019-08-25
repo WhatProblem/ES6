@@ -5,6 +5,17 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: 'bundle.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: [
+                    path.resolve(__dirname, 'loader', 'style-loader'),
+                    path.resolve(__dirname, 'loader', 'less-loader'),
+                ]
+            }
+        ]
     }
 }

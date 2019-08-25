@@ -30,7 +30,26 @@ class Compiler {
         this.emitFile()
     }
     getSource(modulePath) {
+        let rules = this.config.module.rules
         let content = fs.readFileSync(modulePath, 'utf8')
+        for (let i = 0; i < rules.length; i++) {
+            let rule = rules[i],
+                { test, use } = rule,
+                len = use.length - 1
+            if (test.test(modulePath)) { // 当前模块以.less结尾需要通过less-loader转换
+                // loader获取对应的loader函数
+                // 先通过less-loader将less文件转为css内容，再通过css-loader将css内容插入到html中
+                function normalLoader() {
+                    let loader = require(use[len--])
+                    // 递归调用loader 实现转化功能
+                    content = loader(content)
+                    if (len >= 0) {
+                        normalLoader()
+                    }
+                }
+                normalLoader()
+            }
+        }
         return content
     }
     parse(source, parentPath) { // AST解析语法树
