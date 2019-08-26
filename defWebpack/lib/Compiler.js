@@ -5,6 +5,7 @@ const types = require('@babel/types')
 const traverse = require('@babel/traverse').default
 const generator = require('@babel/generator').default
 const ejs = require('ejs')
+const { SyncHook } = require('tapable')
 
 // babylon 把源码转换成 ast
 // @babel/traverse // 遍历节点
@@ -22,12 +23,35 @@ class Compiler {
         this.entry = config.entry // 入口路径
         // 工作路径
         this.root = process.cwd() // 运行文件的路径
+        // 生命周期钩子配置
+        this.hooks = {
+            entryOption: new SyncHook(),
+            compile: new SyncHook(),
+            afterCompile: new SyncHook(),
+            afterPlugins: new SyncHook(),
+            run: new SyncHook(),
+            emit: new SyncHook(),
+            done: new SyncHook(),
+        }
+        // 如果有plugins参数
+        let plugins = this.config.plugins
+        if (Array.isArray(plugins)) {
+            plugins.forEach(plugin => {
+                plugin.apply(this)
+            })
+        }
+        this.hooks.afterPlugins.call()
     }
     run() {
+        this.hooks.run.call()
         // 执行 并且创建模块的依赖关系 构建模块
+        this.hooks.compile.call()
         this.buildModule(path.resolve(this.root, this.entry), true)
+        this.hooks.afterCompile.call()
         // 发射一个文件 打包后的文件
+        this.hooks.emit.call()
         this.emitFile()
+        this.hooks.done.call()
     }
     getSource(modulePath) {
         let rules = this.config.module.rules
@@ -75,7 +99,7 @@ class Compiler {
     buildModule(modulePath, isEntry) {
         // 拿到模块的内容
         let source = this.getSource(modulePath) // 根据路径读取文件内容
-        // 模块id(模块的相对路径) modulePath = modulePath - this.root  src/index.js
+        // 模块id(模块的相对路径) modulePath = modulePath - this.root src/index.js
         let moduleName = './' + path.relative(this.root, modulePath)
 
         if (isEntry) {

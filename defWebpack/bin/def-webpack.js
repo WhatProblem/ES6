@@ -7,5 +7,5 @@ const path = require('path')
 const config = require(path.resolve('webpack.config.js'))
 const Compiler = require('../lib/Compiler')
 const compiler = new Compiler(config)
-
+compiler.hooks.entryOption.call() // 生命周期钩子插件验证
 compiler.run() // 标识运行编译
