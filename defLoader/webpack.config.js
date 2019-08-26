@@ -15,10 +15,27 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     test: /\.js$/,
+            //     use: ['loader3', 'loader2', 'loader1'] // 从后向前执行
+            // }
+
+            // 1.通过enforce改变执行顺序 pre > normal(默认) > post
+            // 2.另外一种行内loader执行 pre > normal > inline > post
+            { // 从下向上执行
+                test: /\.js$/,
+                use: 'loader1',
+                // enforce: 'pre'
+            },
             {
                 test: /\.js$/,
-                use: 'loader1'
-            }
+                use: 'loader2'
+            },
+            {
+                test: /\.js$/,
+                use: 'loader3',
+                // enforce: 'post'
+            },
         ]
     }
 }
