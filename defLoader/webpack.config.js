@@ -7,35 +7,49 @@ module.exports = {
         filename: 'build.js',
         path: path.resolve(__dirname, 'dist')
     },
+    devtool: 'source-map',
     resolveLoader: {
         // alias: { // loader设置别名
-        //     loader1: path.resolve(__dirname, 'loaders', 'loader1.js')
+        // loader1: path.resolve(__dirname, 'loaders', 'loader1.js')
         // }
         modules: ['node_modules', path.resolve(__dirname, 'loaders')] // 缩小查找范围，先从node_modules查找，找不到从loaders查找
     },
+    // watch: true, // 监听文件变化后重新打包，对应在laoder.js(banner-loader)中添加代码：this.addDependency(options.filename)
     module: {
         rules: [
-            // {
+            {
+                test: /\.jpg$/,
+                // // 根据图片生成一个md5 发射到dist目录下，file-loader还会返回当前的图片路径
+                // use: 'file-loader'
+
+                use: {
+                    // url-loader可以进行一些配置选项， file-loader能够处理路径问题
+                    loader: 'url-loader',
+                    options: {
+                        limit: 20*1024 // 文件小于200kb转换为base64
+                    }
+                }
+            },
+            // { // 自定义babel-loader
             //     test: /\.js$/,
-            //     use: ['loader3', 'loader2', 'loader1'] // 从后向前执行
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: {
+            //             presets: ['@babel/preset-env']
+            //         }
+            //     }
             // }
 
-            // 1.通过enforce改变执行顺序 pre > normal(默认) > post
-            // 2.另外一种行内loader执行 pre > normal > inline > post
-            { // 从下向上执行
+            { // 自定义banner-loader
                 test: /\.js$/,
-                use: 'loader1',
-                // enforce: 'pre'
-            },
-            {
-                test: /\.js$/,
-                use: 'loader2'
-            },
-            {
-                test: /\.js$/,
-                use: 'loader3',
-                // enforce: 'post'
-            },
+                use: {
+                    loader: 'banner-loader',
+                    options: {
+                        text: '测试添加banner版权',
+                        filename: path.resolve(__dirname, 'banner.js')
+                    }
+                }
+            }
         ]
     }
 }
