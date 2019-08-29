@@ -20,12 +20,12 @@
 
 // // 测试自定义loader
 // class Test {
-//     constructor(name) {
-//         this.name = name
-//     }
-//     getName() {
-//         return this.name
-//     }
+// constructor(name) {
+// this.name = name
+// }
+// getName() {
+// return this.name
+// }
 // }
 
 // let t = new Test('ceshi')
@@ -36,9 +36,18 @@
 
 
 
-// 测试file-loader和url-loader
-import logo from './logo.jpg'
+// // 测试file-loader和url-loader
+// import logo from './logo.jpg'
 
-let img = document.createElement('img')
-img.src = logo
-document.body.appendChild(img)
+// let img = document.createElement('img')
+// img.src = logo
+// document.body.appendChild(img)
+
+
+
+// // 测试less-loader
+// import './index.less'
+
+
+// 测试css-loader中解析background-img
+import './index.less'

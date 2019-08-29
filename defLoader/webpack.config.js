@@ -17,6 +17,10 @@ module.exports = {
     // watch: true, // 监听文件变化后重新打包，对应在laoder.js(banner-loader)中添加代码：this.addDependency(options.filename)
     module: {
         rules: [
+            { // 实现less-loader，css-loader，style-loader
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader']
+            },
             {
                 test: /\.jpg$/,
                 // // 根据图片生成一个md5 发射到dist目录下，file-loader还会返回当前的图片路径
@@ -26,7 +30,7 @@ module.exports = {
                     // url-loader可以进行一些配置选项， file-loader能够处理路径问题
                     loader: 'url-loader',
                     options: {
-                        limit: 20*1024 // 文件小于200kb转换为base64
+                        limit: 20 * 1024 // 文件小于200kb转换为base64
                     }
                 }
             },
