@@ -3,7 +3,7 @@
 >当前webpack版本：4.39.3
 ----------
 ### 基本依赖包
-- webpack                                   // 提供基本运行环境
+- webpack———————————————————————————————————// 提供基本运行环境
 - webpack-cli                               // 配合webpack快速搭建
 - webpack-dev-server                        // 集成了express提供了本地localhost功能
 - webpack-merge                             // 合并方便dev与prod提取webpack配置的公共文件
