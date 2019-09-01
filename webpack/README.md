@@ -7,7 +7,7 @@
 - 打包（支持我们的js的模块化）
 - 打包命令：npx webpack --config webpack.config.my.js / npm run build -- --config webpack.config.my.js
 
-##解决autoprefixer无法自动添加css3前缀：package添加如下代码
+## 解决autoprefixer无法自动添加css3前缀：package添加如下代码
 ```json
 "browserslist": [
     "defaults",
