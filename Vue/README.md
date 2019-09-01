@@ -3,33 +3,33 @@
 >当前webpack版本：4.39.3
 ----------
 ### 基本依赖包
-- webpack———————————————————————————————————// 提供基本运行环境
-- webpack-cli———————————————————————————————// 配合webpack快速搭建
-- webpack-dev-server————————————————————————// 集成了express提供了本地localhost功能
-- webpack-merge—————————————————————————————// 合并方便dev与prod提取webpack配置的公共文件
-- clean-webpack-plugin——————————————————————// 打包之前先清理之前的dist文件夹
-- copy-webpack-plugin———————————————————————// 打包时拷贝指定文件到目标文件夹
-- html-webpack-plugin———————————————————————// 提取公共html模板文件
-- mini-css-extract-plugin———————————————————// 打包时给css文件添加link标签，不可用在开发环境下
-- optimize-css-assets-webpack-plugin————————// 打包时压缩css文件
-- uglifyjs-webpack-plugin———————————————————// 压缩js文件
-- cross-env—————————————————————————————————// 设置当前执行环境
-- css-loader————————————————————————————————// 处理css文件
-- file-loader———————————————————————————————// 处理图片等其他文件
-- url-loader————————————————————————————————// 处理图片等其他文件
-- style-loader——————————————————————————————// 开发环境下给html模板添加style标签
-- postcss-loader————————————————————————————// 配合autoprofixer给css3属性添加前缀
-- autoprefixer——————————————————————————————// 配置postcss.config.js使用                          
-- vue-loader————————————————————————————————// vue官方提供，解析单文件组件
-- vue-template-compiler—————————————————————// vue官方提供，解析vue模板文件
-- @babel/core———————————————————————————————// 基础依赖不解释
-- @babel/plugin-proposal-class-properties———// 转换 es6的class等高级语法
-- @babel/plugin-proposal-decorators—————————// 转换 es7的decorate等高级语法
-- @babel/plugin-syntax-dynamic-import———————// 提供文件懒加载，动态引入(()=>import('./Home.vue'))
-- @babel/plugin-transform-runtime———————————// 替换@babel/polyfill文件转换高级语法兼容低版本浏览器
-- @babel/polyfill———————————————————————————// 解决vue-router在ie9无法跳转
-- @babel/runtime————————————————————————————// 配合transform-runtime重写es6的Api(例如，Promise)，兼容第版班浏览器
-- @babel/preset-env—————————————————————————// es6 => es5
-- babel-loader——————————————————————————————// 基础依赖，不解释
-- less——————————————————————————————————————// 如果使用在webpack的css规则中自行配制
-- less-loader———————————————————————————————// 对应的less-loader
+- webpack———— 提供基本运行环境
+- webpack-cli———— 配合webpack快速搭建
+- webpack-dev-server———— 集成了express提供了本地localhost功能
+- webpack-merge———— 合并方便dev与prod提取webpack配置的公共文件
+- clean-webpack-plugin———— 打包之前先清理之前的dist文件夹
+- copy-webpack-plugin———— 打包时拷贝指定文件到目标文件夹
+- html-webpack-plugin———— 提取公共html模板文件
+- mini-css-extract-plugin———— 打包时给css文件添加link标签，不可用在开发环境下
+- optimize-css-assets-webpack-plugin———— 打包时压缩css文件
+- uglifyjs-webpack-plugin———— 压缩js文件
+- cross-env———— 设置当前执行环境
+- css-loader———— 处理css文件
+- file-loader———— 处理图片等其他文件
+- url-loader———— 处理图片等其他文件
+- style-loader———— 开发环境下给html模板添加style标签
+- postcss-loader———— 配合autoprofixer给css3属性添加前缀
+- autoprefixer———— 配置postcss.config.js使用                          
+- vue-loader———— vue官方提供，解析单文件组件
+- vue-template-compiler———— vue官方提供，解析vue模板文件
+- @babel/core———— 基础依赖不解释
+- @babel/plugin-proposal-class-properties———— 转换 es6的class等高级语法
+- @babel/plugin-proposal-decorators———— 转换 es7的decorate等高级语法
+- @babel/plugin-syntax-dynamic-import———— 提供文件懒加载，动态引入(()=>import('./Home.vue'))
+- @babel/plugin-transform-runtime———— 替换@babel/polyfill文件转换高级语法兼容低版本浏览器
+- @babel/polyfill———— 解决vue-router在ie9无法跳转
+- @babel/runtime———— 配合transform-runtime重写es6的Api(例如，Promise)，兼容第版班浏览器
+- @babel/preset-env———— es6 => es5
+- babel-loader———— 基础依赖，不解释
+- less———— 如果使用在webpack的css规则中自行配制
+- less-loader———— 对应的less-loader
