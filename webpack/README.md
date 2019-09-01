@@ -8,7 +8,7 @@
 - 打包命令：npx webpack --config webpack.config.my.js / npm run build -- --config webpack.config.my.js
 
 ##解决autoprefixer无法自动添加css3前缀：package添加如下代码
----json
+```json
 "browserslist": [
     "defaults",
     "not ie < 11",
@@ -17,9 +17,9 @@
     "iOS 7",
     "last 3 iOS versions"
   ]
-  ---
+```
 
-  ---javascript
+```javascript
   "@babel/plugin-transform-runtime": 转换原生es6,es7的api为es5, 例如function* gen()迭代器函数
   "@babel/polyfill": 转换es7 api 为es5, 例如 includes()
   "expose-loader": 内联loader，将第三方插件暴露给window
@@ -31,3 +31,4 @@
     方法三： new webpack.ProvidePlugin({ // 在每个模块中注入"$"符号，但不能通过window.$获取
                 $: 'jquery'
             })
+```
