@@ -33,9 +33,11 @@
             })
 ```
 
-tree-|—— dist                        // 打包后文件
-tree-|—— webpack.config.js           // webpack配置文件
-tree-|—— node_modules                // 依赖包
-tree-|—— src                         // 业务代码
-tree-|—— readme.md                   // readme文件
-tree-|—— .gitignore                  // git配置文件
+```
+|—— dist                        // 打包后文件
+|—— webpack.config.js           // webpack配置文件
+|—— node_modules                // 依赖包
+|—— src                         // 业务代码
+|—— readme.md                   // readme文件
+|—— .gitignore                  // git配置文件
+```
