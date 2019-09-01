@@ -142,7 +142,7 @@ module.exports = {
                                 // ['@babel/plugin-proposal-class-properties'], // es7=>es5不能与下面两者同时使用
                                 ["@babel/plugin-proposal-decorators", { "legacy": true }], // ES7装饰器转换为ES5，有顺序限制，上
                                 ["@babel/plugin-proposal-class-properties", { "loose": true }], // ES7装饰器转换为ES5，有顺序限制，下
-                                ["@babel/plugin-transform-runtime"], // 转换es7为es5，例如function * gen()
+                                ["@babel/plugin-transform-runtime"], // 配合@babel/runtime使用，转换es7为es5，例如function * gen()
                                 ['@babel/plugin-syntax-dynamic-import'], // 实现懒加载配置插件（动态import()导入语法）
                             ]
                         }

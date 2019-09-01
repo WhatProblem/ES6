@@ -1,3 +1,5 @@
+// process.env.NODE_ENV = 'production' // 设置当前运行环境
+
 const webpack = require('webpack')
 const path = require('path')
 const merge = require('webpack-merge')
