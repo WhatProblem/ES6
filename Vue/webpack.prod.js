@@ -18,6 +18,13 @@ module.exports = merge(common, {
         minimizer: [
             new OptMizeCss(),
             new UglifyJsPlugin({
+                uglifyOptions: { // 删除打包日志
+                    warnings: false,
+                    compress: {
+                        drop_debugger: true,
+                        drop_console: true,
+                    },
+                },
                 cache: true,
                 parallel: true,
                 sourceMap: true
