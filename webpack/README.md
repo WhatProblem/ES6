@@ -21,6 +21,7 @@
 
 ```javascript
   process.env.NODE_ENV = 'production' // 设置当前运行环境 
+  clientLogLevel: 'warning' // 去除更新修改代码时客户端产生的日志
   "@babel/plugin-transform-runtime": 转换原生es6,es7的api为es5, 例如function* gen()迭代器函数
   "@babel/polyfill": 转换es7 api 为es5, 例如 includes()
   "@babel/runtime":避免自行引入polyfill转换es6,es7时产生全局函数或变量污染全局
@@ -33,5 +34,18 @@
     方法三： new webpack.ProvidePlugin({ // 在每个模块中注入"$"符号，但不能通过window.$获取
                 $: 'jquery'
             })
+
+    new UglifyJsPlugin({
+        uglifyOptions: { // 删除打包日志
+            warnings: false,
+            compress: {
+                drop_debugger: true,
+                drop_console: true,
+            },
+        },
+        cache: true,
+        parallel: true,
+        sourceMap: true
+    })
 ```
 
