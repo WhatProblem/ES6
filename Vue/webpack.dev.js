@@ -5,9 +5,17 @@ let common = require('./webpack.common.js')
 
 process.env.NODE_ENV = 'development'
 
-module.exports = merge(common,{
+module.exports = merge(common, {
     mode: 'development',
     devServer: {
+        clientLogLevel: 'warning',
+        overlay: {
+            warnings: false,
+            errors: true
+        },
+        watchOptions: {
+            poll: false,
+        },
         port: 3000,
         progress: true,
         contentBase: './dist',
