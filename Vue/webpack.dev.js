@@ -8,7 +8,7 @@ process.env.NODE_ENV = 'development'
 module.exports = merge(common, {
     mode: 'development',
     devServer: {
-        clientLogLevel: 'warning',
+        clientLogLevel: 'warning', // 去除开发模式下的更新文件提示日志
         overlay: {
             warnings: false,
             errors: true
@@ -28,9 +28,9 @@ module.exports = merge(common, {
             }
         }
     },
-    devtool: 'source-map',
+    devtool: 'source-map', // 设置日志的映射，方便定位
     plugins: [
-        new webpack.DefinePlugin({ DEV: JSON.stringify('dev') }),
+        new webpack.DefinePlugin({ DEV: JSON.stringify('dev') }), // 暴露全局的开发字段DEV
         // new webpack.NamedChunksPlugin(), // 打印热更新的模块路径
         new webpack.HotModuleReplacementPlugin(), // 热更新插件
     ]

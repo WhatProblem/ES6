@@ -16,8 +16,8 @@ module.exports = merge(common, {
     devtool: 'cheap-module-source-map',
     optimization: {
         minimizer: [
-            new OptMizeCss(),
-            new UglifyJsPlugin({
+            new OptMizeCss(), // 生产环境下压缩css
+            new UglifyJsPlugin({ // 生产环境下压缩js
                 uglifyOptions: { // 删除打包日志
                     warnings: false,
                     compress: {
@@ -33,7 +33,7 @@ module.exports = merge(common, {
     },
     plugins: [
         new webpack.DefinePlugin({ DEV: JSON.stringify('prod') }),
-        new MiniCssExtractPlugin({
+        new MiniCssExtractPlugin({ // 打包后css文件放置位置
             filename: 'css/main.css'
         }),
         new CleanWebpackPlugin()

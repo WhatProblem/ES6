@@ -11,7 +11,7 @@ export default new VueRouter({
         },
         {
             path: '/home',
-            component: () => import('../view/Home.vue')
+            component: () => import('@/view/Home')
         },
         {
             path: '/profile',
