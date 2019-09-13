@@ -32,6 +32,7 @@ module.exports = {
     //     port: 3000, // 更改端口号
     //     progress: true, // 显示进度
     //     contentBase: './build', // 运行指定文件夹（内存）
+    //     clientLogLevel: 'warning', // 去除更新修改代码时客户端产生的日志
     //     open: false, // 自动打开浏览器
         
     //     // 1.使用webpack代理方式
