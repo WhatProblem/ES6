@@ -3,6 +3,7 @@ import Second from './Second'
 import Three from './Three'
 import Four from './Four'
 import Five from './Five'
+import Seven from './Seven'
 
 import './style.scss';
 function component(): any {
@@ -21,4 +22,5 @@ document.body.appendChild(component());
 // console.log(Second)
 // console.log(Three)
 // console.log(Four)
-console.log(Five)
+// console.log(Five)
+Seven.a
