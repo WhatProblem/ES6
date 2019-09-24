@@ -4,6 +4,7 @@ import Three from './Three'
 import Four from './Four'
 import Five from './Five'
 import Seven from './Seven'
+import DB from './Demo'
 
 import './style.scss';
 function component(): any {
@@ -23,4 +24,5 @@ document.body.appendChild(component());
 // console.log(Three)
 // console.log(Four)
 // console.log(Five)
-Seven.a
+// Seven.a
+DB.db
