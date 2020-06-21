@@ -11,6 +11,7 @@ function extend<T, U>(first: T, second: U): T & U {
       (<any>result)[id] = (<any>second)[id];
     }
   }
+  console.log(result);
   return result;
 }
 export default extend;
