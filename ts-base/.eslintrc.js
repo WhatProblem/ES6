@@ -15,7 +15,8 @@ module.exports = {
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
     // "no-extra-semi": "error", // 使用prettier的分号规则
-    "curly": "error"
+    "curly": "error",
+    'prefer-const ': 0
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"
