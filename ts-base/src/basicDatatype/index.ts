@@ -20,11 +20,11 @@ const lists: Array<number> = [1, 2]
 
 // 5. 元组
 // Declare a tuple type
-let x: [string, number]
-// Initialize it
-x = ['hello', 10] // OK
-// Initialize it incorrectly
-x = [10, 'hello'] // Error
+// let x: [string, number]
+// // Initialize it
+// x = ['hello', 10] // OK
+// // Initialize it incorrectly
+// x = [10, 'hello'] // Error
 
 // 6. 枚举
 // enum Color { Red, Green, Blue }

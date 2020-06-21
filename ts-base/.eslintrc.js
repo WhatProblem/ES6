@@ -5,18 +5,18 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
+  extends: [
+    "plugin:@typescript-eslint/recommended", 
+    "prettier/@typescript-eslint", // 样式规范以 prettier 为准
+    "plugin:prettier/recommended" // 样式规范以 prettier 为准
+  ],
   rules: {
-    // "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-    // "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     "no-dupe-keys": "error",
     "no-duplicate-case": "error",
     "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
-    // "no-extra-semi": "error", // 使用prettier的分号规则
     "curly": "error",
-    'prefer-const ': 0
   },
   parserOptions: {
     parser: "@typescript-eslint/parser"
