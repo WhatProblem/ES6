@@ -14,7 +14,7 @@ module.exports = {
     "no-empty": ["error", { "allowEmptyCatch": true }],
     "no-ex-assign": "error",
     "no-extra-boolean-cast": "error",
-    "no-extra-semi": "error",
+    //"no-extra-semi": "error",
     "curly": "error"
   },
   parserOptions: {

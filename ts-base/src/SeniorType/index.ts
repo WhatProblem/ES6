@@ -2,15 +2,17 @@
 
 // 1. 交叉类型
 function extend<T, U>(first: T, second: U): T & U {
-  const result = <T & U>{};
-  for (const id in first) {
-    (<any>result)[id] = (<any>first)[id];
-  }
-  for (const id in second) {
-    if (!result.hasOwnProperty(id)) {
-      (<any>result)[id] = (<any>second)[id];
-    }
-  }
-  return result;
+	const result = <T & U>{}
+	for (const id in first) {
+		;(<any>result)[id] = (<any>first)[id]
+	}
+	for (const id in second) {
+		if (!result.hasOwnProperty(id)) {
+			;(<any>result)[id] = (<any>second)[id]
+		}
+	}
+	// 测试代码自动修复
+	console.log(result)
+	return result
 }
-export default extend;
+export default extend
