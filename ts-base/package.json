@@ -42,7 +42,7 @@
     }
   },
   "lint-staged": {
-    "src/*.{ts,js}": [
+    "src/**": [
       "prettier --write",
       "eslint --fix",
       "git add"
