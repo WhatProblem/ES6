@@ -11,8 +11,6 @@ function extend<T, U>(first: T, second: U): T & U {
 			;(<any>result)[id] = (<any>second)[id]
 		}
 	}
-	// 测试代码自动修复
-	console.log(result)
 	return result
 }
 export default extend

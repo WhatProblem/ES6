@@ -1,22 +1,22 @@
 /* 基础类型 */
 
 // 1. 布尔值
-const isDone = false;
-console.log(isDone);
+const isDone = false
+console.log(isDone)
 
 // 2. 数字
-const decLiteral = 6;
-const hexLiteral = 0xf00d;
-const binaryLiteral = 0b1010;
-const octalLiteral = 0o744;
+const decLiteral = 6
+const hexLiteral = 0xf00d
+const binaryLiteral = 0b1010
+const octalLiteral = 0o744
 
 // 3. 字符串
-let names = "bob";
-names = "smith";
+let names = 'bob'
+names = 'smith'
 
 // 4. 数组
-const list: number[] = [1, 2, 3];
-const lists: Array<number> = [1, 2];
+const list: number[] = [1, 2, 3]
+const lists: Array<number> = [1, 2]
 
 // 5. 元组
 // Declare a tuple type
@@ -40,12 +40,12 @@ const lists: Array<number> = [1, 2];
 // console.log(c) // 2
 
 enum Color {
-  Red = 1,
-  Green,
-  Blue,
+	Red = 1,
+	Green,
+	Blue,
 }
-const colorName: string = Color[2];
-console.log(colorName); // Green
+const colorName: string = Color[2]
+console.log(colorName) // Green
 
 // 7. any
 // 8. void
